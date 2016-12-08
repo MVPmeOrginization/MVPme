@@ -35,11 +35,6 @@ module.exports = function(sequelize) {
       allowNull: true
     }
   }, {
-    image: {
-      type: Sequelize.BLOB('long'),
-      allowNull: true
-    }
-  }, {
     /* Feathers adds additional level of complexity when creating database tables.
     the class Method associate is used to add the table relations before the database is synced. The actual creation of ll the tables happens in the services/index.js file */
     classMethods: {
