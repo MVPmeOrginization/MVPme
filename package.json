@@ -18,7 +18,7 @@
   "scripts": {
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
-    "start": "nodejs-dashboard node src/",
+    "start": "node src/",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
@@ -40,9 +40,21 @@
     "winston": "^2.3.0"
   },
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.24.1",
     "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "nodejs-dashboard": "^0.2.1",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-validator": "^2.2.11"
   }
 }
