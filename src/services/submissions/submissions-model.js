@@ -7,7 +7,6 @@
 const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-<<<<<<< 10c337cb076ed6564ceb1492fe7291f56f0558fd
   const Submissions = sequelize.define('Submissions', {
     title:{
       type: Sequelize.STRING,
@@ -46,5 +45,4 @@ module.exports = function(sequelize) {
   // Submissions.sync();
 
   return Submissions;
-
 };

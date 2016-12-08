@@ -31,8 +31,10 @@ module.exports = function(sequelize) {
       allowNull: false,
       unique: true
     }
+
   }, {
     freezeTableName: true
   });
+
   return Users;
 };
