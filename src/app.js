@@ -49,9 +49,8 @@ const compiler = webpack(webpackConfig);
 
 
 app.use(webpackDevMiddleware(compiler, {
+  publicPath: webpackConfig.output.publicPath,
   hot: true,
-  filename: 'bundle.js',
-  publicPath: '/',
   stats: {
     colors: true,
   },

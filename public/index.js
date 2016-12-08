@@ -87,7 +87,7 @@ const app = feathers()
 // React Router code here...
 app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
-  render();
+render(<Root />, document.getElementById('app'));
 }).catch(error => {
   // Otherwise send them to the login page...
   if (error.code === 401) {
@@ -96,5 +96,3 @@ app.authenticate().then(() => {
   }
   console.error(error);
 });
-
-export default app;
