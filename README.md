@@ -29,3 +29,4 @@ A platform to get your MVP built.
  - Mysql
 
 ## Getting Started ##
+On a mac, install mysql globally with ```brew install mysql```. Then clone this repo with ```git clone https://github.com/Resourceful-Redwoods/MVPme.git```. Then run ```cd ./MVPme && npm install && npm start``` to get things up and running.
