@@ -23,6 +23,7 @@ const compiler = webpack(webpackConfig);
 
 
 app.use(webpackDevMiddleware(compiler, {
+  noInfo: true,
   publicPath: webpackConfig.output.publicPath,
   hot: true,
   stats: {
