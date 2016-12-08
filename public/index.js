@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
+import {render} from 'react-dom';
+import app from './config.js';
 // import react router code...
 // Import other components...
 require('./styles.css');
@@ -9,19 +10,43 @@ if (module.hot) {
   module.hot.accept();
 }
 
-// Sets up app to use authentication and socket.io
-const socket = io();
-const app = feathers()
-  .configure(feathers.socketio(socket))
-  .configure(feathers.hooks())
-  .configure(feathers.authentication({
-  storage: window.localStorage
-}));
+class Root extends Component {
+  constructor(){
+    super();
+    this.state = {
+      user: [],
+      projects: [],
+      submissions: []
+    };
+  };
+
+  componentDidMount() {
+    app.submissionsService.find()
+      .then((submissions) => {
+        this.setState({
+          submissions: submissions
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    app.submissionsService.on('created', (submission) => {
+      // this.setState({
+      //   submissions: this.state.submissions.concat(submission)
+      // });
+    });
+  };
+
+  render () {
+    return <div>Yo!</div>;
+  };
+}
 
 // React Router code here...
 app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
-  render();
+render(<Root />, document.getElementById('app'));
 }).catch(error => {
   // Otherwise send them to the login page...
   if (error.code === 401) {
@@ -30,5 +55,3 @@ app.authenticate().then(() => {
   }
   console.error(error);
 });
-
-export default app;
