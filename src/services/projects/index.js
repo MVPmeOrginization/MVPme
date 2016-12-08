@@ -10,7 +10,7 @@ module.exports = function(){
   const options = {
     Model: projects(app.get('sequelize')),
     paginate: {
-      default: 10,
+      default: 5,
       max: 25
     }
   };
