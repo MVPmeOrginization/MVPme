@@ -1,4 +1,5 @@
 'use strict';
+const submissions = require('./submissions');
 const projects = require('./projects');
 const authentication = require('./authentication');
 const user = require('./user');
@@ -21,4 +22,5 @@ module.exports = function() {
   app.configure(authentication);
   app.configure(user);
   app.configure(projects);
+  app.configure(submissions);
 };
