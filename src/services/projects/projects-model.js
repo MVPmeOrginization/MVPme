@@ -30,7 +30,11 @@ module.exports = function(sequelize) {
       allowNull: false,
       defaultValue: false
     },
-
+    image: {
+      type: Sequelize.BLOB('long'),
+      allowNull: true
+    }
+  }, {
     image: {
       type: Sequelize.BLOB('long'),
       allowNull: true
