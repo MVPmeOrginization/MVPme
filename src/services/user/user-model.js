@@ -1,28 +1,43 @@
 'use strict';
 
 // user-model.js - A sequelize model
-// 
+//
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 
 const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-  const user = sequelize.define('users', {
+  const Users = sequelize.define('Users', {
+    /* bio photo  */
+    userName:{
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true,
+    },
+
+    bio:{
+      type: Sequelize.STRING,
+      allowNull: true,
+
+    },
+
+    password: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
     email: {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true
-    },
-    password: {
-      type: Sequelize.STRING,
-      allowNull: false
     }
+
   }, {
     freezeTableName: true
   });
 
-  user.sync();
+  // Users.sync();
 
-  return user;
+  return Users;
 };

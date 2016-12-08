@@ -1,23 +1,33 @@
 'use strict';
+const Sequelize = require('sequelize');
 
 // projects-model.js - A sequelize model
-// 
+//
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 
-const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-  const projects = sequelize.define('projects', {
-    text: {
+  const Projects = sequelize.define('Projects', {
+    name: {
       type: Sequelize.STRING,
       allowNull: false
-    }
+    },
+    description:{
+      type: Sequelize.STRING,
+      allowNull: false
+    },
   }, {
-    freezeTableName: true
+
+    classMethods: {
+      associate() {
+        Projects.belongsTo(sequelize.models.Users, {foreignKey: 'userid'});
+        Projects.belongsTo(sequelize.models.Submissions, {foreignKey: 'submissionid'});
+      }
+    }
   });
 
-  projects.sync();
+  // Projects.sync();
 
-  return projects;
+  return Projects;
 };

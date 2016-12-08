@@ -23,4 +23,11 @@ module.exports = function() {
   app.configure(user);
   app.configure(projects);
   app.configure(submissions);
+
+  Object.keys(sequelize.models)
+    .map(name => sequelize.models[name])
+    .filter(model => model.associate !== undefined)
+    .forEach(model => model.associate());
+
+  sequelize.sync();
 };
