@@ -17,6 +17,18 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: false
     },
+    bounty: {
+      type: Sequelize.INTERGER,
+      allowNull: false,
+    },
+    videoUrl: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    image: {
+      type: Sequelize.BLOB('long'),
+      allowNull: true
+    }
   }, {
 
     classMethods: {
