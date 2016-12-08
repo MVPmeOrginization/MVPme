@@ -32,10 +32,15 @@ module.exports = function(sequelize) {
     }
 
   }, {
-    freezeTableName: true
+    freezeTableName: true,
+    classMethods: {
+      associate() {
+        Submissions.belongsTo(sequelize.models.Users, {foreignKey: 'userid'});
+      }
+    }
   });
 
-  Submissions.sync();
+  // Submissions.sync();
 
   return Submissions;
 };

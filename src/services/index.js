@@ -28,4 +28,6 @@ module.exports = function() {
     .map(name => sequelize.models[name])
     .filter(model => model.associate !== undefined)
     .forEach(model => model.associate());
+
+  sequelize.sync();
 };

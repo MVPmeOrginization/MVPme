@@ -21,13 +21,13 @@ module.exports = function(sequelize) {
 
     classMethods: {
       associate() {
-        Projects.belongsTo(sequelize.models.Users, {as:'submissionId',foreignKey: 'id'});
-        Projects.belongsTo(sequelize.models.Submissions, {as:'submissionId',foreignKey: 'id'});
+        Projects.belongsTo(sequelize.models.Users, {foreignKey: 'userid'});
+        Projects.belongsTo(sequelize.models.Submissions, {foreignKey: 'submissionid'});
       }
     }
   });
 
-  Projects.sync();
+  // Projects.sync();
 
   return Projects;
 };
