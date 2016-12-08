@@ -24,6 +24,10 @@ module.exports = function() {
   app.configure(projects);
   app.configure(submissions);
 
+  /* Feathers adds additional level of complexity when creating database tables.
+    This is where the models are actually created and the database is synced
+    the the below function goes through each model and runs the associate function to create the relationships between the tables and then the tables are created with sequelize.sync  */
+
   Object.keys(sequelize.models)
     .map(name => sequelize.models[name])
     .filter(model => model.associate !== undefined)
