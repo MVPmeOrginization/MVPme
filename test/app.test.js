@@ -15,14 +15,14 @@ describe('Feathers application tests', function() {
     this.server.close(done);
   });
 
-  xit('starts and shows the index page', function(done) {
+  it('starts and shows the index page', function(done) {
     request('http://localhost:3030', function(err, res, body) {
       assert.ok(body.indexOf('<html>') !== -1);
       done(err);
     });
   });
 
-  xdescribe('404', function() {
+  describe('404', function() {
     it('shows a 404 HTML page', function(done) {
       request({
         url: 'http://localhost:3030/path/to/nowhere',
