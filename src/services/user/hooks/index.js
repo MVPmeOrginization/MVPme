@@ -18,7 +18,7 @@ exports.before = {
     auth.restrictToOwner({ ownerField: 'id' })
   ],
   create: [
-    auth.hashPassword()
+    // auth.hashPassword()
   ],
   update: [
     auth.verifyToken(),

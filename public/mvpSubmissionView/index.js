@@ -64,7 +64,7 @@ export default class MvpSubmission extends React.Component {
 
 
 			}).then((thing) => {
-				console.log(thing);
+
 				alert('MVP Submitted');
 			})
 			.catch((error)=> {
