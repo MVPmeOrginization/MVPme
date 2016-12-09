@@ -16,7 +16,7 @@ const MvpForm = function(props){
 				<form>
 					  <FormGroup>
 					    <ControlLabel>Title</ControlLabel>
-					    <FormControl type='text' placeholder='MVP Title'/>
+					    <FormControl onChange ={props.changeTitle} type='text' placeholder='MVP Title'/>
 					  </FormGroup>
 					</form>
 				</Col>
@@ -24,7 +24,7 @@ const MvpForm = function(props){
 				<form>
 					  <FormGroup>
 					    <ControlLabel>Video Url</ControlLabel>
-              <FormControl type='text' placeholder='Video Url'/>
+              <FormControl onChange ={props.changeUrl} type='text' placeholder='Video Url'/>
 					  </FormGroup>
 					</form>
 				</Col>
@@ -32,7 +32,7 @@ const MvpForm = function(props){
 				<form>
 					  <FormGroup>
 							<ControlLabel>Repository Link</ControlLabel>
-					    <FormControl type='text' placeholder='Repo Link(Optional)'/>
+					    <FormControl onChange ={props.changeRepo} type='text' placeholder='Repo Link(Optional)'/>
 					  </FormGroup>
 					</form>
 				</Col>
@@ -40,12 +40,12 @@ const MvpForm = function(props){
 					<form>
 					  <FormGroup>
 					  	<ControlLabel>Description</ControlLabel>
-							<FormControl componentClass ='textarea'type='text' placeholder='Description'/>
+							<FormControl onChange ={props.changeDesc}  componentClass ='textarea' type='text' placeholder='Description'/>
 					  </FormGroup>
 					</form>
 				</Col>
 				<Col xs={12} xsOffset={5}>
-					<Button bsStyle='primary'>Submit</Button>
+					<Button onClick = {props.submit} bsStyle='primary'>Submit</Button>
 				</Col>
 			</Row>
 		</Grid>
@@ -55,7 +55,11 @@ const MvpForm = function(props){
 
 
 MvpForm.propTypes = {
-  submit: React.PropTypes.func.isRequired
+  submit: React.PropTypes.func.isRequired,
+  changeTitle: React.PropTypes.func.isRequired,
+  changeUrl: React.PropTypes.func.isRequired,
+	changeRepo: React.PropTypes.func.isRequired,
+	changeDesc: React.PropTypes.func.isRequired
 }
 
 export default MvpForm
