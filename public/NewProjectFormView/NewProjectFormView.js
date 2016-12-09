@@ -1,42 +1,47 @@
-import controller from './index.js';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, FormGroup, ControlLabel, FormControl, HelpBlock, Button, InputGroup} from 'react-bootstrap';
+import React from 'react';
 
 
-const projectFormView = (props) => {
+const ProjectFormView = (props) => {
   return (
-    <div> Create A New Project</div>
-    <form>
-      <FormGroup controlId = 'formControlsTitle' validationState = {controller.getValidationState}>
+    <div> Create A New Project
+    <form onSubmit={props.postProject}>
+      <FormGroup controlId = 'formControlsTitle' validationState = {props.getValidation('title')}>
         <ControlLabel>Project Title</ControlLabel>
-        <FormControl type='text' value={controller.state.title} placeholder='Enter your project title here' />
+        <FormControl type='text' onChange={(event) => {props.updateState(event, 'title')}} placeholder='Enter your project title here' />
         <FormControl.Feedback />
-        <HelpBlock>You must supply a title to the project.</HelpBlock>
+        <HelpBlock>Supply a title to the project.</HelpBlock>
       </FormGroup>
-      <FormGroup controlId = 'formControlsDescription' validationState = {controller.getValidationState}>
+      <FormGroup controlId = 'formControlsDescription' validationState = {props.getValidation('description')}>
         <ControlLabel>Project Vision and Description</ControlLabel>
-        <FormControl componentClass='textarea' onChange={setDescription.bind(null, this.value)} placeholder='Enter your project vision/description here' />
+        <FormControl componentClass='textarea' onChange={(event) => {props.updateState(event, 'description')}} placeholder='Enter your project vision/description here' />
         <FormControl.Feedback />
-        <HelpBlock>You must supply at least a base description of the vision for your project to give those competing for your bounty something to go off of.</HelpBlock>
+        <HelpBlock>Supply at least a base description of the vision for your project to give those competing for your bounty something to go off of.</HelpBlock>
       </FormGroup>
-      <FormGroup controlId = 'formControlsBounty' validationState = {controller.getValidationState}>
+      <FormGroup controlId = 'formControlsBounty' validationState = {props.getValidation('bounty')}>
         <ControlLabel>Bounty Amount</ControlLabel>
-        <FormControl type='number' value={controller.state.bounty} placeholder='0' />
+        <InputGroup>
+          <InputGroup.Addon>$</InputGroup.Addon>
+          <FormControl type='number' onChange={(event) => {props.updateState(event, 'bounty')}} placeholder='0' />
+          <InputGroup.Addon>.00</InputGroup.Addon>
+        </InputGroup>
         <FormControl.Feedback />
-        <HelpBlock>You must supply a bounty to be awarded to the selected winner for your project, the bounty is the value of the contract to be awarded.</HelpBlock>
+        <HelpBlock>Supply a bounty to be awarded to the selected winner for your project. The bounty is the value of the contract to be awarded.</HelpBlock>
       </FormGroup>
       <FormGroup controlId = 'formControlsVideo'>
         <ControlLabel>Project Video (optional)</ControlLabel>
-        <FormControl type='url' value={controller.state.value.video} placeholder='Project Description Video url(optional)' />
+        <FormControl type='url' onChange={props.updateState}  placeholder='Project Description Video url(optional)' />
       </FormGroup>
       <FormGroup controlId = 'formControlsPhoto'>  
         <ControlLabel>Project Photo (optional)</ControlLabel>
-        <FormControl type='file' value={controller.state.value.photo} />
+        <FormControl type='file' onChange={props.updateState}  />
       </FormGroup>
       <Button type='submit'> Submit </Button>
     </form>
-  );
+    </div>
+  )
 };
 
 
 
-export default projectFormView;
+export default ProjectFormView;
