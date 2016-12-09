@@ -18,7 +18,7 @@ module.exports = function(sequelize) {
       allowNull: false
     },
     bounty: {
-      type: Sequelize.INTERGER,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
     videoUrl: {
