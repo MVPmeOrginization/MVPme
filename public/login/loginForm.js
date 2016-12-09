@@ -3,7 +3,7 @@ import {Button, FormGroup, Panel, ControlLabel, FormControl} from 'react-bootstr
 
 const LoginForm = (props) => (
   <Panel header={'Login'} bsStyle="primary">
-    <form action="/auth/local">
+    <form method="post" action="/auth/local">
       <FormGroup controlId={'formControlsEmail'}>
         <ControlLabel>Email address</ControlLabel>
         <FormControl type={'email'} name={'email'} />

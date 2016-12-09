@@ -6,7 +6,8 @@
   "auth": {
     "idField": "id",
     "token": {
-      "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q=="
+      "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q==",
+      "successRedirect": "/"
     },
     "local": {}
   }
