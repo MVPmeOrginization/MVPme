@@ -45,6 +45,7 @@ class Root extends Component {
   };
 
   render () {
+<<<<<<< 9cb2e65f105ef5adc050acead913e0687d0dcd1f
     return (
     <Router history={browserHistory}>
       <Route component={Navigation}>
@@ -83,16 +84,21 @@ const app = feathers()
   .configure(feathers.authentication({
   storage: window.localStorage
 }));
+=======
+    return <MvpForm />;
+  };
+}
+>>>>>>> Add progress towards MVP submission form view and functionality.
 
 // React Router code here...
-app.authenticate().then(() => {
+// app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
 render(<Root />, document.getElementById('app'));
-}).catch(error => {
+// }).catch(error => {
   // Otherwise send them to the login page...
-  if (error.code === 401) {
+  // if (error.code === 401) {
     // This assumes that we will have a login.html, but we can also implement this with react and use router...
-    window.location.href = '/login.html';
-  }
-  console.error(error);
-});
+  //   // window.location.href = '/login.html';
+  // // }
+  // console.error(error);
+// });
