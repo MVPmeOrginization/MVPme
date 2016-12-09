@@ -93,6 +93,7 @@ const app = feathers()
 // React Router code here...
 // app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
+<<<<<<< 3d517dfe9e903f46f86acd6a2795424596a3517a
 render(<Root />, document.getElementById('app'));
 // }).catch(error => {
   // Otherwise send them to the login page...
@@ -101,4 +102,15 @@ render(<Root />, document.getElementById('app'));
   //   // window.location.href = '/login.html';
   // // }
   // console.error(error);
+=======
+import form from './NewProjectFormView/index.js'
+render(<form />, document.getElementById('app'));
+// }).catch(error => {
+//   // Otherwise send them to the login page...
+//   if (error.code === 401) {
+//     // This assumes that we will have a login.html, but we can also implement this with react and use router...
+//     window.location.href = '/login.html';
+//   }
+//   console.error(error);
+>>>>>>> begin work on NewProjectFormView
 // });
