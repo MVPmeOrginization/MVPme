@@ -6,6 +6,7 @@ import Navigation from './navigation'
 import MvpForm from './mvpSubmissionView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
+import ProjectsView from './projectListView/index.js'
 // import react router code...
 // Import other components...
 require('./styles.css');
