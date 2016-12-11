@@ -25,8 +25,6 @@ export default class ProjectList extends React.Component {
 		// .catch((error) =>{
 		// 	console.log(error);
 		// });
-
-
 		var context = this;
 		service.projectsService.find().then((allProjects) =>{
 

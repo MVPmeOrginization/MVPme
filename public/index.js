@@ -45,7 +45,7 @@ class Root extends Component {
   };
 
   render () {
-<<<<<<< 9cb2e65f105ef5adc050acead913e0687d0dcd1f
+
     return (
     <Router history={browserHistory}>
       <Route component={Navigation}>
@@ -84,12 +84,9 @@ const app = feathers()
   .configure(feathers.authentication({
   storage: window.localStorage
 }));
-=======
-    return <MvpForm />;
+
   };
 }
->>>>>>> Add progress towards MVP submission form view and functionality.
-
 // React Router code here...
 // app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
