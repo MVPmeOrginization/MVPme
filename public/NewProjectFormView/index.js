@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ProjectForms from './NewProjectFormView.js';
 import {Button} from 'react-bootstrap';
-import Service from '../config.js';
+import service from '../config.js';
 
 class ProjectFormContainer extends Component {
   constructor (props) {
@@ -27,7 +27,7 @@ class ProjectFormContainer extends Component {
       } else {
         return 'error'
       }
-    } 
+    }
     else if (value === 'description') {
       var length = this.state.description.length;
       if (length >= 250) {
@@ -36,13 +36,13 @@ class ProjectFormContainer extends Component {
         return 'warning'
       } else {
         return 'error'
-      } 
+      }
     }
     else if (value === 'bounty') {
       if (this.state.bounty >= 250) {
         return 'success';
       } else if (this.state.bounty >=50) {
-        return 'warning' 
+        return 'warning'
       } else {
         return 'error'
       }
@@ -78,7 +78,7 @@ class ProjectFormContainer extends Component {
     }
   }
 
-  postProject() {
+  postProject(e) {
     //refactor when ready to have submission reroute user to Project Owner View
 
     e.preventDefault();
@@ -90,7 +90,7 @@ class ProjectFormContainer extends Component {
       service.projectsService.create(this.state)
       .then((data) => alert('Your Project was submitted'))
       .catch((err)=> console.error(err));
-    } 
+    }
     else {
       alert('Not all mandatory fields where complete, please fill in the form till all sections that are red at least turn yellow')
     }

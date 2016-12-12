@@ -19,7 +19,7 @@
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
     "start": "node src/",
-    "mocha": "mocha test/**/*.test.js public/**/*.spec.js --compilers js:babel-core/register"
+    "mocha": "mocha public/**/*.spec.js --compilers js:babel-core/register"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
