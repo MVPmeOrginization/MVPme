@@ -11,6 +11,12 @@ const userService = app.service('user');
 const projectsService = app.service('projects');
 const submissionsService = app.service('submissions');
 
+app.authenticate().then(function() {
+  console.log('yo!');
+}).catch(function(err) {
+  console.log(err);
+});
+
 export default {
   app: app,
   userService: userService,
