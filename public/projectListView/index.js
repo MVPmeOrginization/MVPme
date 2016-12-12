@@ -16,7 +16,8 @@ export default class ProjectList extends React.Component {
 		// service.projectsService.create({
 		// 	name: 'test project2',
 		// 	description: 'test project2 this is a test of the emergency broadcasting system. nothing is going wrong, don;t worry about anything. ignore the giant creature in the bay. Have a nice day',
-		// 	bounty: 10000
+		// 	bounty: 10000,
+		// 	userId: 1
 		// })
 		// .then((project)=>{
 		// 	console.log(project);
@@ -24,6 +25,8 @@ export default class ProjectList extends React.Component {
 		// .catch((error) =>{
 		// 	console.log(error);
 		// });
+
+
 		var context = this;
 		service.projectsService.find().then((allProjects) =>{
 

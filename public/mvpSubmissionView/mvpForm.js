@@ -1,7 +1,7 @@
 import React, {Proptypes} from 'react';
 import {Grid, Row, Col, FormGroup, FormControl, ControlLabel, Button, Jumbotron} from 'react-bootstrap'
 // react bootstrap is great and it makes it easy to format and style
-const MvpForm = function(props){
+const MvpForm = function(props) {
 	return (
 	<div>
 	<Col xs={6} xsOffset={3}>

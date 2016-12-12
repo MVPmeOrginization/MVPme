@@ -25,6 +25,12 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: true
     },
+    awarded:{
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+
     image: {
       type: Sequelize.BLOB('long'),
       allowNull: true
@@ -35,7 +41,6 @@ module.exports = function(sequelize) {
     classMethods: {
       associate() {
         Projects.belongsTo(sequelize.models.Users, {foreignKey: 'userid'});
-        Projects.belongsTo(sequelize.models.Submissions, {foreignKey: 'submissionid'});
       }
     }
   });

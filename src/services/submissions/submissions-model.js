@@ -38,6 +38,7 @@ module.exports = function(sequelize) {
     classMethods: {
       associate() {
         Submissions.belongsTo(sequelize.models.Users, {foreignKey: 'userid'});
+        Submissions.belongsTo(sequelize.models.Projects, {foreignKey: 'projectid'});
       }
     }
   });
