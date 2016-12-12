@@ -8,14 +8,14 @@ class ProjectOwnerContainer extends Component {
 		this.state = {
 			//dummy data
 			project: {id: '5',
-			name: 'test',
-      description: 'testing this functionality',
-      bounty: '1000000',
+			name: 'Give Me Cats',
+      description: 'Testing this functionality',
+      bounty: '1,000,000',
       videoUrl: 'https://www.youtube.com/embed/tntOCGkgt98',
       image:'',
       endDate: '02/15/2017'
     },
-      mvps: [{'id': '5', 'title': 'test', 'description': 'testing this', 'videoLink': 'https://www.youtube.com/embed/G8KpPw303PY', 'repoLink': 'somerepo'}, {'id': '6', 'title': 'testy test', 'description': 'testing this as well', 'videoLink': 'https://www.youtube.com/embed/G8KpPw303PY', 'repoLink': 'somerepo2'}]
+      mvps: [{'id': '5', 'title': 'Cats for Your Project', 'description': 'testing this', 'videoLink': 'https://www.youtube.com/embed/G8KpPw303PY', 'repoLink': 'somerepo'}, {'id': '6', 'title': 'I DONT LIKE CATS', 'description': 'Cats are lame, so here are some kids. This is a better idea', 'videoLink': 'https://www.youtube.com/embed/RNXb6BvRyvg', 'repoLink': 'somerepo2'}]
 		}
 		// this.populateState(props.id)
 	};

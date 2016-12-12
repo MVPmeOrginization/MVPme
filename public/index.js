@@ -55,4 +55,4 @@ class Root extends Component {
   )};
 };
 
-render(<ProjectForm />, document.getElementById('app'));
+render(<Root />, document.getElementById('app'));
