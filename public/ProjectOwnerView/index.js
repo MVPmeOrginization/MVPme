@@ -40,27 +40,33 @@ class ProjectOwnerContainer extends Component {
 	// };
 
 	awardMVP (e) {
-		console.log(e.target.value);
-		//update selected MVP 'win' property and project 'awared' property to true
+		var today = new Date();
+		today.setDate(today.getDate()+ 10)
+		if ((new Date(this.state.project.endDate).getTime()) < today){
+			console.log(e.target.value);
+			//update selected MVP 'win' property and project 'awared' property to true
 
-		//have not connected to database to test the syntax of the following functions
-		// service.submissionsServices.update(e.target.id, {win:true}/*this may be the worng syntax to update 'win'*/)
-		// .then((err, results) => {
-		// 	if (err) {
-		// 		alert('There has been an error: ', err);
-		// 		throw err;
-		// 	}
-		// 	console.log('MVP win property updated as "true"')
-		// 	service.projectServices.update(this.state.project.id, {awarded:true}this may be the worng syntax to update 'awarded')
-		// 	.then((err, restuls) => {
-		// 		if (err) {
-		// 			alert('There has been an error: ', err);
-		// 			throw err;
-		// 		}
-		// 		console.log('Project awarded property was changed to "true"');
-		// 		alert('Congratulation! You have awarded the bounty and are on your way to building something amazing');
-		// 	});
-		// });
+			//have not connected to database to test the syntax of the following functions
+			// service.submissionsServices.update(e.target.id, {win:true}/*this may be the worng syntax to update 'win'*/)
+			// .then((err, results) => {
+			// 	if (err) {
+			// 		alert('There has been an error: ', err);
+			// 		throw err;
+			// 	}
+			// 	console.log('MVP win property updated as "true"')
+			// 	service.projectServices.update(this.state.project.id, {awarded:true}this may be the worng syntax to update 'awarded')
+			// 	.then((err, restuls) => {
+			// 		if (err) {
+			// 			alert('There has been an error: ', err);
+			// 			throw err;
+			// 		}
+			// 		console.log('Project awarded property was changed to "true"');
+			// 		alert('Congratulation! You have awarded the bounty and are on your way to building something amazing');
+			// 	});
+			// });
+		} else {
+			alert('Your Project:', this.state.project.title, ' has not passed it\'s end date yet, please wait till after that date to award the bounty');
+		}
 	};
 
 	render() {

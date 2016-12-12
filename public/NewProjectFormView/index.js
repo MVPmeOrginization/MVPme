@@ -81,9 +81,20 @@ class ProjectFormContainer extends Component {
 
   postProject() {
     //refactor when ready to have submission reroute user to Project Owner View
-    Service.projectService.create(this.state)
-    .then((data) => alert('Your Project was submitted'))
-    .catch((err)=> console.error(err));
+
+    e.preventDefault();
+    if ((this.getValidation('title') === 'success'|| this.getValidation('title') === 'warning') &&
+      (this.getValidation('description') === 'success'|| this.getValidation('description') === 'warning') &&
+      (this.getValidation('bounty') === 'success'|| this.getValidation('bounty') === 'warning') &&
+      (this.getValidation('endDate') === 'success'|| this.getValidation('endDate') === 'warning')
+    ){
+      console.log('here is your service sire: ', service.projectsService.create)
+      service.projectsService.create(this.state)
+      .then((data) => alert('Your Project was submitted'))
+      .catch((err)=> console.error(err));
+    } else {
+      alert('Not all mandatory fields where complete, please fill in the form till all sections that are red at least turn yellow')
+    }
   }
 
  render() {
