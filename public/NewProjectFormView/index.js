@@ -27,8 +27,8 @@ class ProjectFormContainer extends Component {
       } else {
         return 'error'
       }
-    }
-    if (value === 'description') {}
+    } 
+    else if (value === 'description') {
       var length = this.state.description.length;
       if (length >= 250) {
         return 'success';
@@ -36,18 +36,26 @@ class ProjectFormContainer extends Component {
         return 'warning'
       } else {
         return 'error'
-      }
-    if (value === 'bounty') {
+      } 
+    }
+    else if (value === 'bounty') {
       if (this.state.bounty >= 250) {
         return 'success';
       } else if (this.state.bounty >=50) {
-        return 'warning'
+        return 'warning' 
       } else {
         return 'error'
       }
     }
-    console.log('your logic is a broke ass bitch')
-    return 'error'
+    else if (value === 'endDate') {
+      console.log('why hello there sir, welcome to the regex')
+      var dateReg = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+      if (dateReg.test(this.state.endDate)) {
+        return 'success'
+      } else {
+        return 'error'
+      }
+    }
   }
 
   updateState(e, string) {
@@ -65,6 +73,9 @@ class ProjectFormContainer extends Component {
     }
     if (string === 'photo') {
       this.setState({ image: e.target.value });
+    }
+    if (string === 'endDate') {
+      this.setState({ endDate: e.target.value });
     }
   }
 

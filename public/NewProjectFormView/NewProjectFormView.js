@@ -28,6 +28,12 @@ const ProjectFormView = (props) => {
         <FormControl.Feedback />
         <HelpBlock>Supply a bounty to be awarded to the selected winner for your project. The bounty is the value of the contract to be awarded.</HelpBlock>
       </FormGroup>
+      <FormGroup controlId = 'formControlsEndDate' validationState = {props.getValidation('endDate')}>
+        <ControlLabel>Project End Date</ControlLabel>
+        <FormControl type='text' onChange={(event) => {props.updateState(event, 'endDate')}} placeholder='mm/dd/yy' />
+        <FormControl.Feedback />
+        <HelpBlock>Please provide a cut off date for submission in mm/dd/yyyy format</HelpBlock>
+      </FormGroup>
       <FormGroup controlId = 'formControlsVideo'>
         <ControlLabel>Project Video (optional)</ControlLabel>
         <FormControl type='url' onChange={props.updateState}  placeholder='Project Description Video url(optional)' />

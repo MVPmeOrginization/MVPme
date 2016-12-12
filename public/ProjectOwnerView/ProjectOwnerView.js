@@ -7,7 +7,7 @@ const ProjectOwnerView = (props) => {
 	
 	return (
 		<div>
-			<image src={props.project.image} rounded/>
+			<image src={props.project.image}/>
 
 			<span>{props.project.name}</span>
 

@@ -2,18 +2,13 @@ import React, {Component} from 'react';
 import {Router, Route, browserHistory, Link, IndexRoute} from 'react-router';
 import {render} from 'react-dom';
 import app from './config.js';
-<<<<<<< 209c2d80062eb7984e4546d66064def82b7e6a0c
 import Navigation from './navigation'
 import MvpForm from './mvpSubmissionView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
 import NonOwnerProjectView from './projectNonOwnerView/index.js';
-
-
-=======
 import Projectform from './NewProjectFormView/index.js';
->>>>>>> Creates new project form functionality
 // import react router code...
 // Import other components...
 require('./styles.css');
@@ -33,7 +28,6 @@ if (module.hot) {
 //     };
 //   };
 
-<<<<<<< 209c2d80062eb7984e4546d66064def82b7e6a0c
   componentDidMount() {
     // app.submissionsService.find()
     //   .then((submissions) => {
@@ -63,30 +57,6 @@ if (module.hot) {
       </Router>
     )};
   };
-=======
-//   componentDidMount() {
-//     app.submissionsService.find()
-//       .then((submissions) => {
-//         this.setState({
-//           submissions: submissions
-//         })
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-
-//     app.submissionsService.on('created', (submission) => {
-//       // this.setState({
-//       //   submissions: this.state.submissions.concat(submission)
-//       // });
-//     });
-//   };
-
-//   render () {
-//     return <Projectform />;
-//   };
-// }
->>>>>>> Creates new project form functionality
 
 
 app.app.authenticate()
@@ -122,23 +92,10 @@ const app = feathers()
 // React Router code here...
 // app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
-<<<<<<< 209c2d80062eb7984e4546d66064def82b7e6a0c
-<<<<<<< 3d517dfe9e903f46f86acd6a2795424596a3517a
-render(<Root />, document.getElementById('app'));
-// }).catch(error => {
-  // Otherwise send them to the login page...
-  // if (error.code === 401) {
-    // This assumes that we will have a login.html, but we can also implement this with react and use router...
-  //   // window.location.href = '/login.html';
-  // // }
-  // console.error(error);
-=======
-import form from './NewProjectFormView/index.js'
-render(<form />, document.getElementById('app'));
-=======
 
-render(<Projectform />, document.getElementById('app'));
->>>>>>> Creates new project form functionality
+render(<Root />, document.getElementById('app'));
+
+
 // }).catch(error => {
 //   // Otherwise send them to the login page...
 //   if (error.code === 401) {
@@ -146,5 +103,5 @@ render(<Projectform />, document.getElementById('app'));
 //     window.location.href = '/login.html';
 //   }
 //   console.error(error);
->>>>>>> begin work on NewProjectFormView
+
 // });
