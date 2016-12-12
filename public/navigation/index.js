@@ -14,11 +14,11 @@ const Navigation = (props) => {
       <Navbar.Collapse>
         <Nav pullRight>
           <NavItem>Projects</NavItem>
-          <NavDropdown title="User" id="basic-nav-dropdown">
+          <NavDropdown title={props.route.userData.userName} id="basic-nav-dropdown">
             <MenuItem>My Projects</MenuItem>
             <MenuItem>My Submissions</MenuItem>
             <MenuItem divider />
-            <MenuItem>Logout</MenuItem>
+            <MenuItem onClick={props.route.onLogout}>Logout</MenuItem>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

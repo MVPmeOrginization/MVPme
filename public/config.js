@@ -2,10 +2,8 @@
 const socket = io();
 const app = feathers()
   .configure(feathers.socketio(socket))
-  .configure(feathers.hooks())
-  .configure(feathers.authentication({
-  storage: window.localStorage
-}));
+  .configure(feathers.hooks());
+  // ));
 
 const userService = app.service('user');
 const projectsService = app.service('projects');
