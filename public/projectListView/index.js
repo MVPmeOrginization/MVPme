@@ -55,12 +55,14 @@ export default class ProjectList extends React.Component {
 			return <ProjectRow key={index} project={project} />
 		});
 		return (
-			<div>
-				<Jumbotron>
-			    <h3 className='projectListHeader'> Open Projects </h3>
-		    </Jumbotron>
+			<Grid>
+        <Row>
+          <Col xs={12} className="text-center">
+            <h3 className='projectListHeader'> Open Projects </h3>
+          </Col>
+        </Row>
 				{projects}
-			</div>
+			</Grid>
 		);
 	}
 };
