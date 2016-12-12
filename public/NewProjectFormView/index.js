@@ -11,7 +11,8 @@ class ProjectFormContainer extends Component {
       description: '',
       bounty: '',
       videoUrl: '',
-      image:''
+      image:'',
+      endDate:''
     }
   }
 
