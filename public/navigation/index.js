@@ -4,6 +4,7 @@ import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 const Navigation = (props) => {
   return (
+    <div>
     <Navbar collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
@@ -13,7 +14,11 @@ const Navigation = (props) => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem>Projects</NavItem>
+          <NavItem>
+            <Link to ='/Projects'>
+            Projects
+            </Link>
+          </NavItem>
           <NavDropdown title={props.route.userData.userName} id="basic-nav-dropdown">
             <MenuItem>My Projects</MenuItem>
             <MenuItem>My Submissions</MenuItem>
@@ -23,6 +28,9 @@ const Navigation = (props) => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+
+      {props.children}
+    </div>
   )
 }
 
