@@ -26,7 +26,7 @@ const MvpForm = function(props) {
 				<form>
 					  <FormGroup>
 					    <ControlLabel>Video Url</ControlLabel>
-              <FormControl onChange ={props.changeUrl} type='text' placeholder='Video Url'/>
+              <FormControl onChange ={props.changeUrl} type='text' placeholder='Video Url: please use the "embed" url (example: "https://www.youtube.com/embed/tntOCGkgt98")'/>
 					  </FormGroup>
 					</form>
 				</Col>

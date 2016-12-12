@@ -8,7 +8,8 @@ import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
 import NonOwnerProjectView from './projectNonOwnerView/index.js';
-
+import Projectform from './NewProjectFormView/index.js';
+import ProjectOwnerView from './ProjectOwnerView/index.js';
 
 // import react router code...
 // Import other components...
@@ -19,15 +20,15 @@ if (module.hot) {
   module.hot.accept();
 }
 
-class Root extends Component {
-  constructor(){
-    super();
-    this.state = {
-      user: [],
-      projects: [],
-      submissions: []
-    };
-  };
+// class Root extends Component {
+//   constructor(){
+//     super();
+//     this.state = {
+//       user: [],
+//       projects: [],
+//       submissions: []
+//     };
+//   };
 
   componentDidMount() {
     // app.submissionsService.find()
@@ -93,12 +94,16 @@ const app = feathers()
 // React Router code here...
 // app.authenticate().then(() => {
   // If they are authenticated, route them to the right place...
+
 render(<Root />, document.getElementById('app'));
+
+
 // }).catch(error => {
-  // Otherwise send them to the login page...
-  // if (error.code === 401) {
-    // This assumes that we will have a login.html, but we can also implement this with react and use router...
-  //   // window.location.href = '/login.html';
-  // // }
-  // console.error(error);
+//   // Otherwise send them to the login page...
+//   if (error.code === 401) {
+//     // This assumes that we will have a login.html, but we can also implement this with react and use router...
+//     window.location.href = '/login.html';
+//   }
+//   console.error(error);
+
 // });
