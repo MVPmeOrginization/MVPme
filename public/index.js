@@ -28,21 +28,21 @@ class Root extends Component {
         id: 1,
         userName: 'testuser',
         email: 'test@test.com',
-        bio: 'Here is a test bio.'
+        bio: 'Here is a test bio.',
+        img: 'https://randomuser.me/api/portraits/women/17.jpg'
       },
       projects: [],
       submissions: []
     };
     this.handleLogout = () => {
-      app.app.logout()
-        console.log('Logged out!');
+      console.log('Logged out!');
     };
   };
 
   render () {
     return (
     <Router history={browserHistory}>
-      <Route onLogout={this.handleLogout} component={Navigation}>
+      <Route userData={this.state.user} onLogout={this.handleLogout} component={Navigation}>
         <Route path="/" component={MvpForm} />
       </Route>
     </Router>

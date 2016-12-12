@@ -14,7 +14,7 @@ const Navigation = (props) => {
       <Navbar.Collapse>
         <Nav pullRight>
           <NavItem>Projects</NavItem>
-          <NavDropdown title="User" id="basic-nav-dropdown">
+          <NavDropdown title={props.route.userData.userName} id="basic-nav-dropdown">
             <MenuItem>My Projects</MenuItem>
             <MenuItem>My Submissions</MenuItem>
             <MenuItem divider />
