@@ -9,7 +9,7 @@ import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
 import NonOwnerProjectView from './projectNonOwnerView/index.js';
 import Projectform from './NewProjectFormView/index.js';
-
+import ProjectOwnerView from './ProjectOwnerView/index.js';
 // import react router code...
 // Import other components...
 require('./styles.css');

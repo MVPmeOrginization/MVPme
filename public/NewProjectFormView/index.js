@@ -48,7 +48,6 @@ class ProjectFormContainer extends Component {
       }
     }
     else if (value === 'endDate') {
-      console.log('why hello there sir, welcome to the regex')
       var dateReg = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
       if (dateReg.test(this.state.endDate)) {
         return 'success'
@@ -88,11 +87,11 @@ class ProjectFormContainer extends Component {
       (this.getValidation('bounty') === 'success'|| this.getValidation('bounty') === 'warning') &&
       (this.getValidation('endDate') === 'success'|| this.getValidation('endDate') === 'warning')
     ){
-      console.log('here is your service sire: ', service.projectsService.create)
       service.projectsService.create(this.state)
       .then((data) => alert('Your Project was submitted'))
       .catch((err)=> console.error(err));
-    } else {
+    } 
+    else {
       alert('Not all mandatory fields where complete, please fill in the form till all sections that are red at least turn yellow')
     }
   }
