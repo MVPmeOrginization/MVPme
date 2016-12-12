@@ -19,7 +19,7 @@ module.exports = function() {
   });
   app.set('sequelize', sequelize);
 
-  app.configure(authentication);
+  // app.configure(authentication);
   app.configure(user);
   app.configure(projects);
   app.configure(submissions);

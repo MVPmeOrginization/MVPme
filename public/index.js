@@ -24,7 +24,12 @@ class Root extends Component {
   constructor(){
     super();
     this.state = {
-      user: [],
+      user: {
+        id: 1,
+        userName: 'testuser',
+        email: 'test@test.com',
+        bio: 'Here is a test bio.'
+      },
       projects: [],
       submissions: []
     };

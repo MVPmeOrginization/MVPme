@@ -2,13 +2,5 @@
   "host": "localhost",
   "port": 3030,
   "mysql": "mysql://root:@localhost:3306/mvpme",
-  "public": "../public/",
-  "auth": {
-    "token": {
-      "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q==",
-      "payload": ["id", "userName", "email", "bio"]
-    },
-    "local": {},
-    "successRedirect": "/"
-  }
+  "public": "../public/"
 }
