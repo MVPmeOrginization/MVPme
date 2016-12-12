@@ -11,11 +11,11 @@ class ProjectOwnerContainer extends Component {
 			name: 'test',
       description: 'testing this functionality',
       bounty: '1000000',
-      videoUrl: 'someurl.com',
+      videoUrl: 'https://www.youtube.com/embed/tntOCGkgt98',
       image:'',
-      endDate: ''
+      endDate: '02/15/2017'
     },
-      mvps: [{'id': '5', 'title': 'test', 'description': 'testing this', 'videoLink': 'someurl.com', 'repoLink': 'somerepo'}, {'id': '6', 'title': 'testy test', 'description': 'testing this as well', 'videoLink': 'someurl.com2', 'repoLink': 'somerepo2'}]
+      mvps: [{'id': '5', 'title': 'test', 'description': 'testing this', 'videoLink': 'https://www.youtube.com/embed/G8KpPw303PY', 'repoLink': 'somerepo'}, {'id': '6', 'title': 'testy test', 'description': 'testing this as well', 'videoLink': 'https://www.youtube.com/embed/G8KpPw303PY', 'repoLink': 'somerepo2'}]
 		}
 		// this.populateState(props.id)
 	};
@@ -65,7 +65,7 @@ class ProjectOwnerContainer extends Component {
 			// 	});
 			// });
 		} else {
-			alert('Your Project:', this.state.project.title, ' has not passed it\'s end date yet, please wait till after that date to award the bounty');
+			alert('Your Project:' + '"' +this.state.project.name + '"' + ' has not reached its end date (' + this.state.project.endDate + ') yet, please wait till after that date to award the bounty');
 		}
 	};
 

@@ -11,7 +11,7 @@ const ProjectOwnerView = (props) => {
 
 			<span>{props.project.name}</span>
 
-			<div>Need to embed this {props.project.videoUrl}</div>
+			<iframe src={props.project.videoUrl}></iframe>
 			 <Accordion>
 				<Panel header='Project Description' eventKey='1'>{props.project.description}</Panel>
 			 </Accordion>
@@ -25,7 +25,7 @@ const ProjectOwnerView = (props) => {
 						return (
 							<li key={index}> 
 								<div> {mvp.title}</div>
-								<div> {mvp.videoLink} </div>
+								<iframe src={mvp.videoLink}> {mvp.videoLink} </iframe>
 								<div> {mvp.repoLink} </div>
 								<div> {mvp.description} </div>
 								<Button bsSize='lg' onClick={props.awardMVP} value={mvp.id}> Award the Bounty </Button>

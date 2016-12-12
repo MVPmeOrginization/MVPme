@@ -35,7 +35,7 @@ const ProjectFormView = (props) => {
         <HelpBlock>Please provide a cut off date for submission in mm/dd/yyyy format</HelpBlock>
       </FormGroup>
       <FormGroup controlId = 'formControlsVideo'>
-        <ControlLabel>Project Video (optional)</ControlLabel>
+        <ControlLabel>Project Video (optional): use embed video url (example: https://www.youtube.com/embed/tntOCGkgt98)</ControlLabel>
         <FormControl type='url' onChange={props.updateState}  placeholder='Project Description Video url(optional)' />
       </FormGroup>
       <FormGroup controlId = 'formControlsPhoto'>  
