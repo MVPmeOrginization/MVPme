@@ -5,7 +5,7 @@ import React from 'react';
 const ProjectFormView = (props) => {
   return (
     <div>
-    <Col xs={6} xs Offset={3}>
+    <Col xs={6} xsOffset={3}>
       <Jumbotron>
         <h3> Create A New Project </h3>
       </Jumbotron>

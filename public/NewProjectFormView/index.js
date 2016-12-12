@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ProjectForms from './NewProjectFormView.js';
 import {Button} from 'react-bootstrap';
-import Service from '../config.js';
+import service from '../config.js';
 
 class ProjectFormContainer extends Component {
   constructor (props) {
@@ -17,7 +17,6 @@ class ProjectFormContainer extends Component {
   }
 
   getValidation(value) {
-    console.log(value)
     if (value === 'title') {
       var length = this.state.name.length;
       if (length > 5) {
@@ -78,7 +77,7 @@ class ProjectFormContainer extends Component {
     }
   }
 
-  postProject() {
+  postProject(e) {
     //refactor when ready to have submission reroute user to Project Owner View
 
     e.preventDefault();
