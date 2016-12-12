@@ -5,53 +5,52 @@ import {Grid, Row, Col, FormGroup, FormControl, ControlLabel, Button, Jumbotron}
 const MvpForm = function(props) {
 
 	return (
-	<div>
-	<Col xs={6} xsOffset={3}>
-		<Jumbotron>
-			<h3 > MVP Submit Form </h3>
-		</Jumbotron>
-	</Col>
-
 		<Grid>
-			<Row>
-				<Col xs={6} xsOffset={3}>
-				<form>
+      <Row>
+        <Col xs={12} className="text-center">
+    			<h2> MVP Submit Form </h2>
+      	</Col>
+      </Row>
+      <form>
+		     <Row>
+				  <Col xs={6} xsOffset={3}>
 					  <FormGroup>
 					    <ControlLabel>Title</ControlLabel>
 					    <FormControl onChange ={props.changeTitle} type='text' placeholder='MVP Title'/>
 					  </FormGroup>
-					</form>
-				</Col>
-				<Col xs={6} xsOffset={3}>
-				<form>
+		      </Col>
+        </Row>
+        <Row>
+  				<Col xs={6} xsOffset={3}>
 					  <FormGroup>
 					    <ControlLabel>Video Url</ControlLabel>
               <FormControl onChange ={props.changeUrl} type='text' placeholder='Video Url: please use the "embed" url (example: "https://www.youtube.com/embed/tntOCGkgt98")'/>
 					  </FormGroup>
-					</form>
-				</Col>
-				<Col xs={6} xsOffset={3}>
-				<form>
+  				</Col>
+        </Row>
+        <Row>
+  				<Col xs={6} xsOffset={3}>
 					  <FormGroup>
 							<ControlLabel>Repository Link</ControlLabel>
 					    <FormControl onChange ={props.changeRepo} type='text' placeholder='Repo Link(Optional)'/>
 					  </FormGroup>
-					</form>
-				</Col>
-				<Col xs={6} xsOffset={3}>
-					<form>
+  				</Col>
+        </Row>
+        <Row>
+  				<Col xs={6} xsOffset={3}>
 					  <FormGroup>
 					  	<ControlLabel>Description</ControlLabel>
 							<FormControl onChange ={props.changeDesc}  componentClass ='textarea' type='text' placeholder='Description'/>
 					  </FormGroup>
-					</form>
-				</Col>
-				<Col xs={12} xsOffset={5}>
-					<Button onClick = {props.submit} bsStyle='primary'>Submit</Button>
-				</Col>
-			</Row>
-		</Grid>
-	</div>
+  				</Col>
+        </Row>
+        <Row>
+  				<Col xs={12} xsOffset={5}>
+  					<Button onClick = {props.submit} bsStyle='primary'>Submit</Button>
+  				</Col>
+		    </Row>
+      </form>
+	  </Grid>
 	)
 };
 
