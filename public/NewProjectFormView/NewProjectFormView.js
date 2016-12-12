@@ -5,13 +5,11 @@ import React from 'react';
 const ProjectFormView = (props) => {
   return (
     <div>
-    <div> 
     <Col xs={6} xs Offset={3}>
       <Jumbotron>
         <h3> Create A New Project </h3>
       </Jumbotron>
     </Col>
-    </div>
 
       <Grid>
         <Row>
