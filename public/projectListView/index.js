@@ -30,7 +30,6 @@ export default class ProjectList extends React.Component {
 		var context = this;
 		service.projectsService.find().then((allProjects) =>{
 
-			console.log(allProjects.data);
 			this.setState({
 				projects: allProjects.data
 			});

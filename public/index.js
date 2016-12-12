@@ -7,6 +7,9 @@ import MvpForm from './mvpSubmissionView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
+import NonOwnerProjectView from './projectNonOwnerView/index.js';
+
+
 // import react router code...
 // Import other components...
 require('./styles.css');
@@ -47,14 +50,14 @@ class Root extends Component {
   render () {
 
     return (
-    <Router history={browserHistory}>
-      <Route component={Navigation}>
+      <Router history={browserHistory}>
+        <Route component={Navigation}>
 
-        <Route path="/test/" component={MvpForm} />
-      </Route>
-    </Router>
-  )};
-};
+          <Route path="/test/" component={MvpForm} />
+        </Route>
+      </Router>
+    )};
+  };
 
 
 app.app.authenticate()

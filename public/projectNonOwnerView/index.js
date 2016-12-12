@@ -7,11 +7,23 @@ export default class ProjectNonOwnerView extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-
+			projectId: 1,
+			currentProject: {}
 		}
 	}
 
 	componentDidMount() {
+
+		service.projectsService.get(this.state.projectId)
+		.then((project)=>{
+			console.log(project);
+			this.setState({
+				currentProject: project
+			});
+		})
+		.catch((error)=>{
+			console.log(error);
+		})
 
 	}
 
@@ -22,8 +34,7 @@ export default class ProjectNonOwnerView extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProjectDescription />
-				<ProjectFooter awarded={this.state.awarded} />
+				<ProjectDescription project ={this.state.currentProject} />
 			</div>
 		)
 	}

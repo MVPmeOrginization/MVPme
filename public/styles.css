@@ -12,6 +12,14 @@
 }
 
 .projectTitle {
+	float: right;
+}
 
+.projectImage {
+	width: 150px;
+	height: 150px;
+	display: block;
+	float: left;
+	margin-right: 25px;
 }
 
