@@ -55,4 +55,9 @@ app.use(compress())
   .configure(services)
   .configure(middleware);
 
+// Wildcard server route to handle react-router browserHistory
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, app.get('public'), 'index.html'))
+});
+
 module.exports = app;
