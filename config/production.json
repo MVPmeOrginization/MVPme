@@ -1,13 +1,14 @@
 {
-  "host": "MVPme-app.feathersjs.com",
-  "port": 80,
-  "mysql": "DATABASE_URL",
+  "host": "localhost",
+  "port": 3030,
+  "mysql": "mysql://root:@localhost:3306/mvpme",
   "public": "../public/",
   "auth": {
-    "idField": "id",
     "token": {
-      "secret": "FEATHERS_AUTH_SECRET"
+      "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q==",
+      "payload": ["id", "userName", "email", "bio"]
     },
-    "local": {}
+    "local": {},
+    "successRedirect": "/"
   }
 }

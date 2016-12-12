@@ -18,7 +18,7 @@ const Navigation = (props) => {
             <MenuItem>My Projects</MenuItem>
             <MenuItem>My Submissions</MenuItem>
             <MenuItem divider />
-            <MenuItem>Logout</MenuItem>
+            <MenuItem onClick={props.route.onLogout}>Logout</MenuItem>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
