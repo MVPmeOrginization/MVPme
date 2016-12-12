@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Router, Route, browserHistory, Link, IndexRoute} from 'react-router';
 import {render} from 'react-dom';
 import app from './config.js';
+import Navigation from './navigation'
 import MvpForm from './mvpSubmissionView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
@@ -45,7 +46,10 @@ class Root extends Component {
   render () {
     return (
     <Router history={browserHistory}>
-      <Route path="/" component={MvpForm} />
+      <Route component={Navigation}>
+
+        <Route path="/test/" component={MvpForm} />
+      </Route>
     </Router>
   )};
 };
@@ -57,9 +61,9 @@ app.app.authenticate()
   })
   .catch(error => {
     if (error.code === 401) {
+      browserHistory.push('/login');
       render(
         <Router history={browserHistory}>
-          <Route path="/" component={LoginPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
         </Router>,

@@ -6,7 +6,16 @@ const LoginHeader = () => (
   <Jumbotron className={'login-header'}>
     <h1>MVPme</h1>
     <p>Your platform to have top developers compete by creating their best MVP to win your project!</p>
-    <p><Link to='/signup'><Button bsStyle="primary">Sign up!</Button></Link></p>
+    <div>
+      <Link to='/login'>
+        <Button bsStyle="primary">Login</Button>
+      </Link>
+    </div>
+    <div>
+      <Link to='/signup'>
+        <Button bsStyle="primary">Sign up!</Button>
+      </Link>
+    </div>
   </Jumbotron>
 );
 
