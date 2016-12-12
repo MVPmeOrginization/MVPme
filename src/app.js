@@ -39,6 +39,31 @@ app.use(webpackHotMiddleware(compiler, {
   path: '/__webpack_hmr',
   heartbeat: 10 * 1000,
 }));
+const middleware = require('./middleware');
+const services = require('./services');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+
+const app = feathers();
+const compiler = webpack(webpackConfig);
+
+
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: webpackConfig.output.publicPath,
+  hot: true,
+  stats: {
+    colors: true,
+  },
+  historyApiFallback: true,
+}));
+
+
+
+app.use(webpackHotMiddleware(compiler, {
+  log: console.log,
+  path: '/__webpack_hmr',
+  heartbeat: 10 * 1000,
+}));
 
 app.configure(configuration(path.join(__dirname, '..')));
 

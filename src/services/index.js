@@ -34,4 +34,5 @@ module.exports = function() {
     .forEach(model => model.associate());
 
   sequelize.sync();
+
 };

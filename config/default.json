@@ -4,10 +4,19 @@
   "mysql": "mysql://root:@localhost:3306/mvpme",
   "public": "../public/",
   "auth": {
+<<<<<<< 3061b8b2d401375706c1d2b940349818d6a25235
     "token": {
       "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q=="
     },
     "local": {},
     "successRedirect": "/"
+=======
+    "idField": "id",
+    "token": {
+      "secret": "ZyN1oYtacSxQx1Pgq/CpYV6v/mbKa1IEhH0Nr/ETnjnOWy0kOuuAb4Y8nEUdECENm6dp2zwi2h0pMyZHijiR+Q==",
+      "successRedirect": "/"
+    },
+    "local": {}
+>>>>>>> Creates backend server and feathers services
   }
 }

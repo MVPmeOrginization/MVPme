@@ -4,7 +4,8 @@ const assert = require('assert');
 const request = require('request');
 const app = require('../src/app');
 
-xdescribe('Feathers application tests', function() {
+
+describe('Feathers application tests', function() {
   before(function(done) {
     this.server = app.listen(3030);
     this.server.once('listening', () => done());
