@@ -35,6 +35,7 @@ export default class ProjectNonOwnerView extends React.Component {
 		return (
 			<div>
 				<ProjectDescription project ={this.state.currentProject} />
+				<ProjectFooter />
 			</div>
 		)
 	}

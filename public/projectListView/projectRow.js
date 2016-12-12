@@ -1,5 +1,6 @@
 import React, {Proptypes} from 'react';
 import {Grid, Row, Col, FormGroup, FormControl, ControlLabel, Button, Jumbotron, Image, PageHeader, Panel, Accordion} from 'react-bootstrap';
+import { Link } from 'react-router';
 
 const ProjectRow = function(props){
 	return (
@@ -10,7 +11,9 @@ const ProjectRow = function(props){
 				    <div>
 				    <Image className='projectThumbnail' src='https://s-media-cache-ak0.pinimg.com/736x/cb/ce/7c/cbce7c291a892b70a84e08e2f8d4c0c0.jpg' rounded thumbnail/>
 				    <PageHeader >
-				    <small className="projectTitle">{props.project.name}</small><br/>
+				    <small className="projectTitle">
+				    <Link to='/ProjectView' >{props.project.name}</Link>
+				    </small><br/>
 				    <small>Bounty: {props.project.bounty}.00</small>
 				    </PageHeader>
 				    </div>

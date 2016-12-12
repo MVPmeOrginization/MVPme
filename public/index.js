@@ -8,7 +8,7 @@ import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
 import NonOwnerProjectView from './projectNonOwnerView/index.js';
-import Projectform from './NewProjectFormView/index.js';
+import ProjectForm from './NewProjectFormView/index.js';
 import ProjectOwnerView from './ProjectOwnerView/index.js';
 
 // import react router code...
@@ -42,8 +42,14 @@ class Root extends Component {
   render () {
     return (
     <Router history={browserHistory}>
-      <Route userData={this.state.user} onLogout={this.handleLogout} component={Navigation}>
-        <Route path="/" component={MvpForm} />
+      <Route path='/' userData={this.state.user} onLogout={this.handleLogout} component={Navigation}>
+        <Route path='Projects' component={ProjectsView} />
+        <Route path='LoginPage' component={LoginPage}/>
+        <Route path='SignupPage' component={SignupPage}/>
+        <Route path='MvpForm' component={MvpForm} />
+        <Route path='ProjectForm' component={ProjectForm}/>
+        <Route path='OwnerView' component={ProjectOwnerView}/>
+        <Route path='ProjectView' component={NonOwnerProjectView}/>
       </Route>
     </Router>
   )};
