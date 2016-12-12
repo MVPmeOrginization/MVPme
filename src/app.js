@@ -55,4 +55,8 @@ app.use(compress())
   .configure(services)
   .configure(middleware);
 
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, app.get('public'), 'index.html'))
+});
+
 module.exports = app;

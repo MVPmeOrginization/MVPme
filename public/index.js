@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Router, Route, hashHistory, Link, IndexRoute} from 'react-router';
+import {Router, Route, browserHistory, Link, IndexRoute} from 'react-router';
 import {render} from 'react-dom';
 import app from './config.js';
 import MvpForm from './mvpSubmissionView/index.js';
@@ -44,7 +44,7 @@ class Root extends Component {
 
   render () {
     return (
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route path="/" component={MvpForm} />
     </Router>
   )};
@@ -57,9 +57,9 @@ app.app.authenticate()
   })
   .catch(error => {
     if (error.code === 401) {
-      window.location.href = '/#/login';
       render(
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
+          <Route path="/" component={LoginPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
         </Router>,
