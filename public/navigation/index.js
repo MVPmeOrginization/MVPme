@@ -15,7 +15,7 @@ const Navigation = (props) => {
       <Navbar.Collapse>
         <Nav pullRight>
           <NavItem>
-            <Link to ='/Projects'>
+            <Link to ='/projects'>
             Projects
             </Link>
           </NavItem>
