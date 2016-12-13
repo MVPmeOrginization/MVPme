@@ -7,14 +7,7 @@ export default class ProjectList extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			projects: [{id: '5',
-			name: 'Give Me Cats',
-      description: 'Testing this functionality',
-      bounty: '1,000,000',
-      videoUrl: 'https://www.youtube.com/embed/tntOCGkgt98',
-      image:'',
-      endDate: '02/15/2017'
-    }]
+      projects: []
 		}
 	}
 
@@ -32,7 +25,6 @@ export default class ProjectList extends React.Component {
 	// 	// .catch((error) =>{
 	// 	// 	console.log(error);
 	// 	// });
-
 
 	// 	var context = this;
 	// 	service.projectsService.find().then((allProjects) =>{
@@ -55,12 +47,18 @@ export default class ProjectList extends React.Component {
 			return <ProjectRow key={index} project={project} />
 		});
 		return (
-			<div>
-				<Jumbotron>
-			    <h3 className='projectListHeader'> Open Projects </h3>
-		    </Jumbotron>
-				{projects}
-			</div>
+			<Grid>
+        <Row>
+          <Col xs={12} className="text-center">
+            <h1 className='projectListHeader'> Open Projects </h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={10} xsOffset={1}>
+            {projects}
+          </Col>
+        </Row>
+			</Grid>
 		);
 	}
 };

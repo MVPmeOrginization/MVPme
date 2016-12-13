@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProjectForms from './NewProjectFormView.js';
+import ProjectForms from './projectFormView.js';
 import {Button} from 'react-bootstrap';
 import service from '../config.js';
 

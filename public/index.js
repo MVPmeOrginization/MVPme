@@ -3,12 +3,12 @@ import {Router, Route, browserHistory, Link, IndexRoute} from 'react-router';
 import {render} from 'react-dom';
 import app from './config.js';
 import Navigation from './navigation'
-import MvpForm from './mvpSubmissionView/index.js';
+import MvpForm from './mvpFormView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
-import NonOwnerProjectView from './projectNonOwnerView/index.js';
-import ProjectForm from './NewProjectFormView/index.js';
+import NonOwnerProjectView from './projectView/index.js';
+import ProjectForm from './projectFormView/index.js';
 import ProjectOwnerView from './ProjectOwnerView/index.js';
 
 // import react router code...
@@ -46,10 +46,10 @@ class Root extends Component {
         <Route path='projects' component={ProjectsView} />
         <Route path='loginpage' component={LoginPage}/>
         <Route path='signuppage' component={SignupPage}/>
-        <Route path='mvpform' component={MvpForm} />
+        <Route path='mvpform/:id' component={MvpForm} />
         <Route path='projectform' component={ProjectForm}/>
         <Route path='ownerview' component={ProjectOwnerView}/>
-        <Route path='projectview' component={NonOwnerProjectView}/>
+        <Route path='projectview/:id' component={NonOwnerProjectView}/>
       </Route>
     </Router>
   )};
