@@ -17,7 +17,6 @@ class ProjectFormContainer extends Component {
   }
 
   getValidation(value) {
-    console.log(value)
     if (value === 'title') {
       var length = this.state.name.length;
       if (length > 5) {
