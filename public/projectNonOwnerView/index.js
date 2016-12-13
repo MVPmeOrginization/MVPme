@@ -6,8 +6,8 @@ import { Link } from 'react-router';
 import ProjectOwnerView from '../ProjectOwnerView/index.js';
 
 export default class ProjectNonOwnerView extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			userid:1,
 			project: {
@@ -19,17 +19,19 @@ export default class ProjectNonOwnerView extends React.Component {
 	}
 
 	// componentDidMount() {
-
-	// 	service.projectsService.get(this.state.projectId)
-	// 	.then((project)=>{
-	// 		console.log(project);
-	// 		this.setState({
-	// 			currentProject: project
-	// 		});
-	// 	})
-	// 	.catch((error)=>{
-	// 		console.log(error);
-	// 	})
+		this.setState({
+			currentProject: JSON.parse(this.props.location.query.project)
+		})
+		// service.projectsService.get(this.state.projectId)
+		// .then((project)=>{
+		// 	console.log(project);
+		// 	this.setState({
+		// 		currentProject: project
+		// 	});
+		// })
+		// .catch((error)=>{
+		// 	console.log(error);
+		// })
 
 	// }
 
@@ -38,15 +40,13 @@ export default class ProjectNonOwnerView extends React.Component {
 	}
 
 	render() {
-		if (this.state.userid === this.state.project.userid) {
-			return ( <ProjectOwnerView />)
-		} else {
-			return (
-				<div>
-					<ProjectDescription project ={this.state.currentProject} />
-					<ProjectFooter />
-				</div>
-			)
-		}
+
+		return (
+			<div>
+				<ProjectDescription project ={this.state.currentProject} />
+				<ProjectFooter projectId = {this.state.currentProject.id}/>
+			</div>
+		)
+
 	}
 }

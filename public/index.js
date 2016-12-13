@@ -43,13 +43,13 @@ class Root extends Component {
     return (
     <Router history={browserHistory}>
       <Route path='/' userData={this.state.user} onLogout={this.handleLogout} component={Navigation}>
-        <Route path='Projects' component={ProjectsView} />
-        <Route path='LoginPage' component={LoginPage}/>
-        <Route path='SignupPage' component={SignupPage}/>
-        <Route path='MvpForm' component={MvpForm} />
-        <Route path='ProjectForm' component={ProjectForm}/>
-        <Route path='OwnerView' component={ProjectOwnerView}/>
-        <Route path='ProjectView' component={NonOwnerProjectView}/>
+        <Route path='projects' component={ProjectsView} />
+        <Route path='loginpage' component={LoginPage}/>
+        <Route path='signuppage' component={SignupPage}/>
+        <Route path='mvpform' component={MvpForm} />
+        <Route path='projectform' component={ProjectForm}/>
+        <Route path='ownerview' component={ProjectOwnerView}/>
+        <Route path='projectview' component={NonOwnerProjectView}/>
       </Route>
     </Router>
   )};

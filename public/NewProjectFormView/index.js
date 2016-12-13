@@ -26,7 +26,7 @@ class ProjectFormContainer extends Component {
       } else {
         return 'error'
       }
-    } 
+    }
     else if (value === 'description') {
       var length = this.state.description.length;
       if (length >= 250) {
@@ -35,13 +35,13 @@ class ProjectFormContainer extends Component {
         return 'warning'
       } else {
         return 'error'
-      } 
+      }
     }
     else if (value === 'bounty') {
       if (this.state.bounty >= 250) {
         return 'success';
       } else if (this.state.bounty >=50) {
-        return 'warning' 
+        return 'warning'
       } else {
         return 'error'
       }
@@ -89,7 +89,7 @@ class ProjectFormContainer extends Component {
       service.projectsService.create(this.state)
       .then((data) => alert('Your Project was submitted'))
       .catch((err)=> console.error(err));
-    } 
+    }
     else {
       alert('Not all mandatory fields where complete, please fill in the form till all sections that are red at least turn yellow')
     }

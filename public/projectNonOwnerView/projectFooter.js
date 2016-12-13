@@ -7,7 +7,7 @@ const ProjectFooter = function(props) {
 	<Grid>
 		<Row>
 			<Col xs={6} xsOffset={3}>
-				<Link to='/MvpForm' bsStyle='primary'>Submit MVP</Link>
+				<Link to={{pathname: '/mvpform', query:{ projectId: props.projectId }}} >Submit MVP</Link>
 			</Col>
 		</Row>
 	</Grid>

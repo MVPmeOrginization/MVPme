@@ -2,10 +2,9 @@ import React, {Proptypes} from 'react';
 import MvpForm from './mvpForm';
 import service from '../config.js'
 
-
 export default class MvpSubmission extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state ={
 			user: undefined,
 			title: undefined,
@@ -22,26 +21,26 @@ export default class MvpSubmission extends React.Component {
 	}
 
 	handleTitleChange(event){
-
 		this.setState({
 			title: event.target.value
 		});
 		console.log(this.state);
 	}
+
 	handleUrlChange(event){
 		this.setState({
 			url: event.target.value
 		});
 		console.log(this.state);
-
 	}
+
 	handleRepoChange(event){
 		this.setState({
 			repo: event.target.value
 		});
 		console.log(this.state);
-
 	}
+
 	handleDescChange(event){
 		this.setState({
 			desc: event.target.value
@@ -54,17 +53,19 @@ export default class MvpSubmission extends React.Component {
 		if(this.state.title !== undefined &&
 			this.state.url !== undefined &&
 			this.state.user !== undefined){
-
 			service.submissionsService.create({
 				title: this.state.title,
 				description: this.state.desc,
 				videoLink: this.state.url,
 				repoLink: this.state.repo,
-				userId: 1
+
+				// dummy user id.
+				userid: 1,
+				projectid: this.props.location.query.projectId
+
 
 
 			}).then((thing) => {
-
 				console.log(thing);
 				alert('MVP Submitted');
 			})
