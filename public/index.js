@@ -46,10 +46,10 @@ class Root extends Component {
         <Route path='projects' component={ProjectsView} />
         <Route path='loginpage' component={LoginPage}/>
         <Route path='signuppage' component={SignupPage}/>
-        <Route path='mvpform' component={MvpForm} />
+        <Route path='mvpform/:id' component={MvpForm} />
         <Route path='projectform' component={ProjectForm}/>
         <Route path='ownerview' component={ProjectOwnerView}/>
-        <Route path='projectview' component={NonOwnerProjectView}/>
+        <Route path='projectview/:id' component={NonOwnerProjectView}/>
       </Route>
     </Router>
   )};

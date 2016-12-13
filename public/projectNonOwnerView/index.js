@@ -8,6 +8,7 @@ import ProjectOwnerView from '../ProjectOwnerView/index.js';
 export default class ProjectNonOwnerView extends React.Component {
 	constructor(props) {
 		super(props);
+    console.log(props);
 		this.state = {
 			userid:1,
 			project: {
