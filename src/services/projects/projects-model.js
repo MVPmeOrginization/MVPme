@@ -25,6 +25,10 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: true
     },
+    endDate:{
+      type:Sequelize.STRING,
+      allowNull: false
+    },
     awarded:{
       type: Sequelize.BOOLEAN,
       allowNull: false,
