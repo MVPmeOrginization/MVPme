@@ -7,7 +7,7 @@ import MvpForm from './mvpFormView/index.js';
 import LoginPage from './login/index.js';
 import SignupPage from './signup/index.js';
 import ProjectsView from './projectListView/index.js'
-import NonOwnerProjectView from './projectView/index.js';
+import ProjectView from './projectView/index.js';
 import ProjectForm from './projectFormView/index.js';
 import ProjectOwnerView from './ProjectOwnerView/index.js';
 
@@ -49,7 +49,7 @@ class Root extends Component {
         <Route path='mvpform/:id' component={MvpForm} />
         <Route path='projectform' component={ProjectForm}/>
         <Route path='ownerview' component={ProjectOwnerView}/>
-        <Route path='projectview/:id' component={NonOwnerProjectView}/>
+        <Route path='projectview/:id' component={ProjectView}/>
       </Route>
     </Router>
   )};

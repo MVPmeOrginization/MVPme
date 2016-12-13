@@ -5,10 +5,9 @@ import service from '../config.js';
 import { Link } from 'react-router';
 import ProjectOwnerView from '../ProjectOwnerView/index.js';
 
-export default class ProjectNonOwnerView extends React.Component {
+export default class ProjectView extends React.Component {
 	constructor(props) {
 		super(props);
-    console.log(props);
 		this.state = {
 			userid:1,
 			project: {
@@ -36,19 +35,23 @@ export default class ProjectNonOwnerView extends React.Component {
 		// 	console.log(error);
 		// })
 
-	}
+	// }
 
-	handleMVPSubmitRequest() {
-
-	}
+	// handleMVPSubmitRequest() {
+  //
+	// }
 
 	render() {
 
-		return (
-			<div>
-				<ProjectDescription project ={this.state.currentProject} />
-				<ProjectFooter projectId = {this.state.currentProject.id}/>
-			</div>
+    return (
+      <Grid>
+        <ProjectDescription
+          project={this.state.currentProject}
+          />
+        <ProjectFooter
+          projectId={this.state.currentProject.id}
+          />
+      </Grid>
 		)
 
 	}
