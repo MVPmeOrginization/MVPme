@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mysql": "mysql://root:@localhost:3306/mvpme",
+  "public": "../public/"
+}
