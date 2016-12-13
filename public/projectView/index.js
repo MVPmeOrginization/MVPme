@@ -20,9 +20,9 @@ export default class ProjectNonOwnerView extends React.Component {
 	}
 
 	// componentDidMount() {
-		this.setState({
-			currentProject: JSON.parse(this.props.location.query.project)
-		})
+		// this.setState({
+		// 	currentProject: JSON.parse(this.props.location.query.project)
+		// })
 		// service.projectsService.get(this.state.projectId)
 		// .then((project)=>{
 		// 	console.log(project);
